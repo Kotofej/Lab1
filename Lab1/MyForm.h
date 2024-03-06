@@ -1,5 +1,5 @@
 #pragma once
-
+#include<cmath>
 namespace Lab1 {
 
 	using namespace System;
@@ -271,7 +271,7 @@ namespace Lab1 {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		float x, y;
 		x = Convert::ToDouble(textBox1->Text);
-		y = ((2*x+sin(x))/(cos(x)^2+x^2)) + (((1/2)^x)/sqrt(x));
+		y = ((2*x+sin(x))/(cos(x)*cos(x)+pow(x,2))) + ((pow((1/2),x))/sqrt(x));
 		textBox2->Text = Convert::ToString(y);
 	}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -280,7 +280,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	double a = 6.7, b = -5, c = 0.5, f;
-	f = ((sqrt(b*c+a^2))/(log(a)))+cos(b);
+	f = ((sqrt(b*c+pow(a,2)))/(log(a)))+cos(b);
 	textBox3->Text = Convert::ToString(f);
 }
 };
